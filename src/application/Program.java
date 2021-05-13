@@ -1,5 +1,6 @@
 package application;
 
+import java.util.Date;
 import java.text.ParseException;
 import java.util.List;
 
@@ -34,6 +35,14 @@ public class Program {
 		list = sellerDao.findAll();
 		
 		list.forEach(System.out::println);
+		
+		System.out.println("\n=== TEST 4: SELLER INSERT ===");
+		
+		Seller newSeller = new Seller(null, "Alexis", "alexis@gmail.com", new Date(), 6000.00, department);
+		
+		sellerDao.insert(newSeller);
+		
+		System.out.println("Inserted, new id: " + newSeller.getId());
 		
 	}
 
