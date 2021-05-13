@@ -1,7 +1,7 @@
 package application;
 
 import java.text.ParseException;
-import java.text.SimpleDateFormat;
+import java.util.List;
 
 import model.dao.DAOFactory;
 import model.dao.SellerDAO;
@@ -20,6 +20,14 @@ public class Program {
 		Seller seller = sellerDao.findById(3);
 		
 		System.out.println(seller);
+		
+		System.out.println("\n=== TEST 2: SELLER FINDBYDEPARTMENT ===");
+		
+		Department department = new Department(2, null);
+		
+		List<Seller> list = sellerDao.findByDepartment(department);
+		
+		list.forEach(System.out::println);
 		
 	}
 
