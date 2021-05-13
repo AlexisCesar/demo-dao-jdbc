@@ -12,15 +12,10 @@ public class Program {
 
 	public static void main(String[] args) throws ParseException {
 		
-		SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
-		
-		Department obj = new Department(1, "Coffee");
-		
-		System.out.println(obj);
-		
-		Seller seller = new Seller(10, "Alexis", "alexis@gmail.com", sdf.parse("21/03/2001"), 6500.00, obj);
 		
 		SellerDAO sellerDao = DAOFactory.createSellerDAO();
+		
+		Seller seller = sellerDao.findById(3);
 		
 		System.out.println(seller);
 		
